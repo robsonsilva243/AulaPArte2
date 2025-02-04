@@ -1,0 +1,20 @@
+Solucao estruturada
+modularidade
+abstracao
+fuxo logico efeciente
+
+Ferramentas essenciais para o codigo
+fluxograna e Pseudocodigos
+
+exemplo Pseudocodigos
+
+inicio
+solicitar ao ususario um numero
+receber o numero fonrnecido
+se o numero for visivel por 2 entao
+  exibir ö numero e par""
+senão
+ exibir o "numero e impar"
+ fim
+
+ 
