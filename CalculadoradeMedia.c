@@ -3,7 +3,7 @@
 //calculadora de media com tres notas inseridas pelo usuario
 int main(){
     int nota1, nota2, nota3;
-    int media;
+    float media;
 
     (printf("*** Programa de Calculo de Media ***\n\n"));
 
@@ -14,9 +14,9 @@ int main(){
     printf("Digite a terceira nota: ");
     scanf("%d", &nota3);
 
-    media = (nota1 + nota2 + nota3) / 3;
+    media = (float) (nota1 + nota2 + nota3) / 3;
 
-    printf("Media: %d\n", media);
+    printf("Media: %.1f\n", media);
 
     return 0;
 }
