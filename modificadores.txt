@@ -1,0 +1,132 @@
+Modificadores de tipos de dados
+Descubra neste vídeo como usar modificadores de tipo como unsigned e long para manipular grandes números e variáveis complexas em C. Aprenda a declarar, inicializar e comparar variáveis, garantindo precisão nos cálculos e desenvolvendo programas mais eficientes.
+
+
+Modificadores de tipos de dados
+São usados para alterar as propriedades dos tipos de dados primitivos, permitindo uma manipulação mais precisa e eficiente das variáveis.
+
+Os modificadores de tipos de dados permitem que você controle melhor como os dados são armazenados e manipulados no programa. Em C, os modificadores mais comuns são unsigned e long. Veja a diferença a seguir.
+
+Modificador unsigned
+É usado para declarar variáveis que podem armazenar apenas valores positivos (incluindo zero). Ele pode ser aplicado aos tipos de dados int e char, dobrando a faixa positiva de valores que podem ser armazenados. Observe!
+
+int
+int pode armazenar valores que vão de -2,147,483,648 a 2,147,483,647, permitindo tanto números positivos quanto negativos. Já um unsigned int pode armazenar apenas valores positivos, dobrando a faixa positiva para 0 a 4,294,967,295.
+
+close
+char
+char pode armazenar valores que vão de -128 a 127. Já um unsigned char pode armazenar apenas valores positivos, permitindo um intervalo de 0 a 255. Isso é útil para armazenar caracteres de conjuntos de caracteres estendidos ou para representar dados binários.
+
+A tabela a seguir apresenta um resumo sobre os tipos de dados int e char.
+
+Tipo	Intervalo de valores
+int	-2,147,483,648 a 2,147,483,647
+unsigned int	0 a 4,294,967,295
+char	-128 a 127
+unsigned char	0 a 255
+Tabela comparativa: valores de int e char com e sem unsigned.
+Sérgio Cardoso.
+
+Exemplo de unsigned int e int
+Nesse exemplo, a variável signedNumber é declarada como int, e a variável unsignedNumber é declarada como unsigned int, ambas armazenando o valor 3000000000.
+
+O especificador de formato %d é usado no printf para exibir valores int, enquanto %u é usado para exibir valores unsigned int.
+
+Vamos executar esse programa e verificar como ficam as saídas.
+
+Exercício
+info_outlined
+Tutorial
+content_copy
+Copiar
+c
+
+Input
+Console
+A saída mostra que o valor 3000000000 é armazenado corretamente na variável unsigned int, mas excede o limite da variável int, resultando em um valor negativo devido ao overflow (situação em que um valor excede a capacidade de armazenamento de determinado tipo de dado). Isso ilustra a importância de escolher o tipo de dado correto para evitar problemas de armazenamento.
+
+Número assinado: -1294967296
+Número não assinado: 3000000000
+
+Modificador long
+É usado para aumentar a capacidade de armazenamento dos tipos de dados primitivos. Ele pode ser aplicado a int e double, permitindo armazenar valores maiores e com maior precisão.
+
+Um int normal pode armazenar valores que vão de -2,147,483,648 a 2,147,483,647. Já um long int pode armazenar valores muito maiores, de -9,223,372,036,854,775,808 a 9,223,372,036,854,775,807, proporcionando uma faixa muito mais ampla para cálculos que exigem grandes números inteiros.
+
+Um double pode armazenar valores com grande precisão, de ±1.7E-308 a ±1.7E+308. Um long double, por outro lado, oferece uma precisão ainda maior, permitindo armazenar valores de ±3.4E-4932 a ±1.1E+4932. Veja a tabela!
+
+Tipo	Intervalo de valores
+int	-2,147,483,648 a 2,147,483,647
+long int	-9,223,372,036,854,775,808 a 9,223,372,036,854,775,807
+double	±1.7E-308 a ±1.7E+308
+long double	±3.4E-4932 a ±1.1E+4932
+Tabela Comparativa: Valores de int e double com e sem long.
+Sérgio Cardoso.
+
+Exemplo de long int e int
+Nesse exemplo, a variável regularNumber é declarada como int, enquanto bigNumber é declarada como long int. Ambos armazenam inicialmente o valor máximo de um int (2147483647). Em seguida, bigNumber é atualizado para 2147483648, que está fora do alcance de um int normal, mas dentro do alcance de um long int. Confira!
+
+Exercício
+info_outlined
+Tutorial
+content_copy
+Copiar
+c
+
+Input
+Console
+A saída mostra que tanto regularNumber quanto bigNumber podem armazenar o valor 2147483647. No entanto, quando bigNumber é atualizado para 2147483648, ele pode armazenar o valor corretamente, enquanto regularNumber não poderia armazenar esse valor por exceder o limite de um int.
+
+Número regular (int): 2147483647
+Número grande (long int): 2147483647
+Número grande atualizado(long int): 2147483648
+
+Veja a seguir um exemplo de long double e double:
+
+Nesse exemplo, a variável preciseNumber é declarada como double, enquanto veryPreciseNumber é declarada como long double. Ambos armazenam o valor de π (pi), mas veryPreciseNumber armazena com uma precisão maior.
+
+Exercício
+info_outlined
+Tutorial
+content_copy
+Copiar
+c
+
+Input
+Console
+Número preciso (double): 3.141592653589793
+
+Número muito preciso (long double): 3.141592653589793238463
+
+A saída mostra que preciseNumber armazena o valor de π com uma precisão de 15 casas decimais, enquanto veryPreciseNumber armazena com uma precisão de 21 casas decimais, ilustrando a maior precisão de long double.
+
+Veja a seguir um exemplo de uso combinado:
+
+A variável largePositiveNumber é declarada como unsigned long int, permitindo armazenar um número positivo extremamente grande. O especificador de formato %lu é usado no printf para exibir valores unsigned long int.
+
+Exercício
+info_outlined
+Tutorial
+content_copy
+Copiar
+c
+
+Input
+Console
+A saída do programa é:
+
+Número positivo grande: 4000000000
+
+A saída mostra que a variável largePositiveNumber, declarada como unsigned long int, armazena corretamente um valor extremamente grande (4000000000). Utilizando o modificador unsigned long, a faixa de valores possíveis para armazenamento é ampliada, evitando problemas de overflow e garantindo que valores positivos muito grandes sejam armazenados e manipulados corretamente.
+
+Prática recomendada
+Para garantir que suas operações com tipos de dados modificados sejam realizadas corretamente e para evitar problemas de overflow ou perda de precisão, aqui estão algumas práticas recomendadas que você deve seguir. Acompanhe!
+
+Escolha o tipo de dado apropriado
+Utilize modificadores de tipo quando precisar armazenar valores fora do alcance dos tipos de dados primitivos padrão.
+
+Verifique a compatibilidade de tipos
+Sempre verifique a compatibilidade dos tipos de dados ao realizar operações aritméticas para evitar resultados inesperados.
+
+Use especificadores de formato corretos
+Utilize os especificadores de formato corretos ao exibir valores com printf para garantir que os dados sejam exibidos corretamente.

@@ -1,0 +1,5 @@
+---
+triple:          'x86_64-apple-darwin'
+binary-path:     '/Users/usuario/Programando/Programando com C/AulaPArte2/tester'
+relocations:     []
+...
