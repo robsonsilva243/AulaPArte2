@@ -3,7 +3,7 @@
 #include <time.h>
 int main (){
     int opcao;
-    int numeroSecreto, palpite;
+    int numeroSecreto, palpite, regras;
 
     printf ("Menu Pricipal\n");
     printf ("1. Iniciar Jogo\n");
@@ -27,9 +27,27 @@ int main (){
             break;
         case 2:
             printf("Regras do jogo\n");
+            printf("1. Como jogar?\n");
+            printf("2. Quantas Tentativas?\n");
+            printf("3. Como Ganhar?\n");
+            scanf("%d", &regras);
+            switch (regras){
+                case 1:
+                    printf("O jogador deve adivinhar um numero entre 0 e 9\n");
+                    break;
+                case 2:
+                    printf("O jogador tem 3 tentativas para acertar o numero\n");
+                    break;
+                case 3:
+                    printf("O jogador ganha se acertar o numero\n");
+                    break;
+                default:
+                    printf("Opcao Invalida\n");
+                    break;
+            }
             break;
         case 3:
-            printf("Sair\n");
+            printf("Obrigado por Participar!\n");
             break;
         default:
             printf("Opcao Invalida\n");
